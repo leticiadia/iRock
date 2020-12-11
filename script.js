@@ -5,19 +5,19 @@ function greetUser() {
    userName = readCookie('irock_username');
 
    if(userName)
-       alert('Olá ' + userName + ', senti sua falta.');
+       alert('Hello' + userName + ', I missed you.');
    else
-       alert('Olá, eu sou sua rocha de estimação.');
+       alert('Hello, i am your pet rock.');
       
 }
 
 function touchRock(){
     if(userName){
-        alert('Eu gosto de atenção, ' + userName + '. Obrigada.');
+        alert('I like attention, ' + userName + '. Thanks.');
     }else{
-        userName = prompt("Qual é o seu nome?", "Digite seu nome aqui");
+        userName = prompt("What is your name?", "Enter your name here");
         if(userName){
-            alert("Que bom conhecer você, " + userName + ".");
+            alert("Nice to meet you, " + userName + ".");
         if(navigator.cookieEnabled)
             writeCookie("irock_username", userName, 1 * 24 * 1000);
         else
@@ -41,7 +41,7 @@ function writeCookie(name, value, days) {
         
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
 
-        expires = "; expires=" + date.toGMTString();
+        expires = "; expires=" + date.toUTCString();
 
     }
 
