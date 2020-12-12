@@ -5,7 +5,7 @@ function greetUser() {
    userName = readCookie('irock_username');
 
    if(userName)
-       alert('Hello' + userName + ', I missed you.');
+       alert('Hello ' + userName + ', I missed you.');
    else
        alert('Hello, i am your pet rock.');
       
@@ -19,7 +19,7 @@ function touchRock(){
         if(userName){
             alert("Nice to meet you, " + userName + ".");
         if(navigator.cookieEnabled)
-            writeCookie("irock_username", userName, 1 * 24 * 1000);
+            writeCookie("irock_username", userName, 1 * 24);
         else
             alert('Sorry. Cookies arent supported/enabled in your browser. I wont remember you later.');
             
@@ -29,11 +29,11 @@ function touchRock(){
     setTimeout("document.getElementById('rockImg').src = 'img/rock_sad.jpg';", 5 * 60 * 1000);
 }
 
-function resizeRock() {
+ function resizeRock() {
     document.getElementById('rockImg').style.height = (document.body.clientHeight - 100) * 0.9;
-}
+} 
 
-function writeCookie(name, value, days) {
+ function writeCookie(name, value, days) {
     var expires = "";
 
     if(days){
@@ -46,9 +46,9 @@ function writeCookie(name, value, days) {
     }
 
     document.cookie = name + "=" + value + expires + "; path=/";
-}
+} 
 
-function readCookie(name){
+ function readCookie(name){
     var searchName = name + "=";
     var cookies = document.cookie.split(';');
 
@@ -63,11 +63,11 @@ function readCookie(name){
         return c.substring(searchName.length, c.length);
     }
     return null;
-}
+} 
 
-function eraseCookie(name){
+ function eraseCookie(name){
     writeCookie(name, "", -1);
-}
+} 
 
 
 
